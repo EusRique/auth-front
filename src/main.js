@@ -5,6 +5,9 @@ import router from './router'
 //Plugins
 import vuetify from './plugins/vuetify'
 
+//CSS
+import './assets/css/global.css'
+
 Vue.config.productionTip = false
 
 Vue.prototype.$vuetifyInstance = vuetify

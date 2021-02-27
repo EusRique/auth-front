@@ -1,6 +1,8 @@
 <template>
-  <section>
-    <router-view />
+  <section class="Auth">
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
   </section>
 </template>
 
@@ -27,5 +29,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.Auth {
+  width: 100%;
+}
 </style>
