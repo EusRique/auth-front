@@ -1,30 +1,35 @@
-# stock-trader
+# Auth Front
 
-## Project setup
+Tela de Autenticação
+
+## **Requerimentos**
+
+- VueJs
+
+## **Depois de tudo configurando**
+
+Instale as dependências do projeto rodando o seguinte comando no terminal.
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+Para iniciar execute o comando abaixo.
+
+### Ambiente de desenvolvimento
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Compila e minimiza para produção
+
 ```
 npm run build
 ```
 
-### Run your tests
-```
-npm run test
-```
-
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-# auth-front
