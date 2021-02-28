@@ -25,6 +25,7 @@
             >
             </v-text-field>
           </div>
+          <v-btn color="warning" dark>Entrar</v-btn>
         </v-form>
       </div>
     </main>
@@ -121,5 +122,12 @@ export default {
   color: #000;
   font-weight: bold;
   font-size: 16px;
+}
+.theme--dark.v-btn.v-btn--has-bg {
+  width: 50%;
+  font-family: Poppins;
+  font-size: 16px;
+  text-transform: none;
+  background-color: var(--color-button-login);
 }
 </style>
