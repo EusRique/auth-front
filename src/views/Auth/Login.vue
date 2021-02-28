@@ -1,12 +1,18 @@
 <template>
   <div class="login">
-    HELLO!!!
+    <LoginForm />
   </div>
 </template>
 
 <script>
+const LoginForm = () => import('@/components/Auth/LoginForm')
+
 export default {
   name: 'Login',
+
+  components: {
+    LoginForm,
+  },
 
   props: {},
 
