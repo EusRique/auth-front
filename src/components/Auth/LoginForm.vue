@@ -6,6 +6,26 @@
     <main class="Content__Main">
       <div class="Content__Main__AuthContent">
         <h2>Faça seu login!!!</h2>
+        <!-- <hr class="divider"> -->
+        <v-form class="Content__Form">
+          <div class>
+            <v-label>Email</v-label>
+            <v-text-field
+              v-model="first"
+              solo
+            >
+            </v-text-field>
+          </div>
+          <div class>
+            <v-label>Senha</v-label>
+            <v-text-field
+              :type="'password'"
+              v-model="first"
+              solo
+            >
+            </v-text-field>
+          </div>
+        </v-form>
       </div>
     </main>
   </div>
@@ -72,7 +92,34 @@ export default {
         font-size: 24px;
         font-weight: bold;
       }
+      & hr.divider {
+        overflow: visible;
+        padding: 0;
+        margin-bottom: 10px;
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        color: #6e6d7a;
+        text-align: center;
+      }
+      & hr.divider:after {
+          content: 'Ou';
+          display: inline-block;
+          position: relative;
+          top: -15px;
+          font-size: 14px;
+          padding: 0 16px;
+          background: #fff;
+      }
+
     }
   }
+  &__Form {
+    margin-top: 10%;
+  }
+}
+.theme--light.v-label {
+  color: #000;
+  font-weight: bold;
+  font-size: 16px;
 }
 </style>
