@@ -6,14 +6,23 @@ export default [
     
     children: [
       {
-        path: "",
-        name: "Login",
+        path: '',
+        name: 'Login',
         component: () =>
           import(/* webpackChunkName: "login" */ "@/views/Auth/Login.vue"),
         meta: {
-          title: "Seja bem-vindo!"
+          title: 'Seja bem-vindo!'
         }
       },
+      {
+        path: '/signup',
+        name: 'SignUp',
+        component: () =>
+          import (/* webpackChunkName: "login" */ "@/views/Auth/SignUp.vue"),
+        meta: {
+          title: 'Inscreva-se'
+        }
+      }
     ]
   }
 ]

@@ -1,31 +1,58 @@
 <template>
   <div class="Content">
     <nav class="Content__Nav">
-      <p>Não é membro? <router-link class="router_link" to="/signup">Inscreva-se agora! </router-link></p>
+      <p>Já é um membro? <router-link class="router_link" to="/login">Entrar</router-link></p>
     </nav>
     <main class="Content__Main">
       <div class="Content__Main__AuthContent">
-        <h2>Faça seu login!!!</h2>
+        <h2>Inscreva-se!!!</h2>
         <!-- <hr class="divider"> -->
         <v-form class="Content__Form">
           <div class>
-            <v-label>Email</v-label>
+            <v-label>Name</v-label>
             <v-text-field
-              v-model="first"
+              v-model="name"
               solo
             >
             </v-text-field>
           </div>
           <div class>
-            <v-label>Senha</v-label>
+            <v-label>Email</v-label>
             <v-text-field
-              :type="'password'"
-              v-model="first"
+              v-model="email"
               solo
             >
             </v-text-field>
           </div>
-          <v-btn color="warning" dark>Entrar</v-btn>
+          <div class>
+            <v-label>CPF</v-label>
+            <v-text-field
+              v-model="cpf"
+              solo
+            >
+            </v-text-field>
+          </div>
+          <div class="Content__Password">
+            <div class="Content__Password__Box">
+              <v-label>Senha</v-label>
+              <v-text-field
+                v-model="password"
+                type="password"
+                solo
+              >
+              </v-text-field>
+            </div>
+            <div class="Content__Password__Box">
+              <v-label>Confirmar Senha</v-label>
+              <v-text-field
+                v-model="password"
+                type="password"
+                solo
+              >
+              </v-text-field>
+            </div>
+          </div>
+          <v-btn color="warning" dark>Criar conta</v-btn>
         </v-form>
       </div>
     </main>
@@ -33,8 +60,12 @@
 </template>
 
 <script>
+
+
 export default {
-  name: 'LoginForm',
+  name: 'Login',
+
+  components: {},
 
   props: {},
 
@@ -59,7 +90,7 @@ export default {
   height: 100vh;
   width: 50vw;
   padding: 30px 30px 0;
-  background: var(--color-secundary-login);
+  background-color: var(--color-secundary-login);
 
   display: flex;
   flex-direction: column;
@@ -75,13 +106,13 @@ export default {
       text-align: right;
       font-size: 16px;
 
-      flex-grow: 1;
+      flex-grow: 0;
     }
   }
   &__Main {
     margin: 0;
     padding: 0;
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -103,18 +134,29 @@ export default {
         text-align: center;
       }
       & hr.divider:after {
-          content: 'Ou';
-          display: inline-block;
-          position: relative;
-          top: -15px;
-          font-size: 14px;
-          padding: 0 16px;
-          background: #fff;
+        content: 'Ou';
+        display: inline-block;
+        position: relative;
+        top: -15px;
+        font-size: 14px;
+        padding: 0 16px;
+        background: #fff;
       }
     }
   }
   &__Form {
     margin-top: 10%;
+  }
+  &__Password {
+    display: flex;
+    justify-content: space-between;
+    &__Box {
+      width: 48%;
+    }
+  }
+  .router_link {
+    text-decoration: none;
+    color: #000;
   }
 }
 .theme--light.v-label {
