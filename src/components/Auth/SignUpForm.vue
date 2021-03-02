@@ -52,7 +52,13 @@
               </v-text-field>
             </div>
           </div>
-          <v-btn color="warning" dark>Criar conta</v-btn>
+          <v-btn 
+            color="warning" 
+            dark
+            @click="createUser"
+          >
+            Criar conta
+          </v-btn>
         </v-form>
       </div>
     </main>
@@ -60,7 +66,7 @@
 </template>
 
 <script>
-
+import { mapActions } from "vuex";
 
 export default {
   name: 'Login',
@@ -69,7 +75,9 @@ export default {
 
   props: {},
 
-  data: () => ({}),
+  data: () => ({
+    user: []
+  }),
 
   computed: {},
 
@@ -77,7 +85,15 @@ export default {
   
   mounted() {},
   
-  methods: {},
+  methods: {
+    ...mapActions("User", {
+      createUser: "createUser"
+    }),
+
+    async createUser() {
+      await this.createUser(this.user)
+    }
+  },
   
   watch: {}
 }
