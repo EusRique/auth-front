@@ -11,7 +11,7 @@
           <div class>
             <v-label>Name</v-label>
             <v-text-field
-              v-model="name"
+              v-model="user.name"
               solo
             >
             </v-text-field>
@@ -19,7 +19,7 @@
           <div class>
             <v-label>Email</v-label>
             <v-text-field
-              v-model="email"
+              v-model="user.email"
               solo
             >
             </v-text-field>
@@ -27,7 +27,7 @@
           <div class>
             <v-label>CPF</v-label>
             <v-text-field
-              v-model="cpf"
+              v-model="user.cpf"
               solo
             >
             </v-text-field>
@@ -36,7 +36,7 @@
             <div class="Content__Password__Box">
               <v-label>Senha</v-label>
               <v-text-field
-                v-model="password"
+                v-model="user.password"
                 type="password"
                 solo
               >
@@ -45,7 +45,7 @@
             <div class="Content__Password__Box">
               <v-label>Confirmar Senha</v-label>
               <v-text-field
-                v-model="password"
+                v-model="user.passwordConfirmation"
                 type="password"
                 solo
               >
@@ -55,7 +55,7 @@
           <v-btn 
             color="warning" 
             dark
-            @click="createUser"
+            @click="registerUser()"
           >
             Criar conta
           </v-btn>
@@ -76,7 +76,7 @@ export default {
   props: {},
 
   data: () => ({
-    user: []
+    user: {}
   }),
 
   computed: {},
@@ -89,8 +89,9 @@ export default {
     ...mapActions("User", {
       createUser: "createUser"
     }),
-
-    async createUser() {
+    
+    async registerUser() {
+      
       await this.createUser(this.user)
     }
   },
