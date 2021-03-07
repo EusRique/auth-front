@@ -93,6 +93,7 @@ export default {
     async registerUser() {
       
       await this.createUser(this.user)
+      this.user = {}
     }
   },
   

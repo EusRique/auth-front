@@ -5,6 +5,7 @@ import store from "./store"
 
 //Plugins
 import vuetify from "./plugins/vuetify"
+import toasted from"./plugins/toasted"
 
 //CSS
 import "./assets/css/global.css"
@@ -17,5 +18,6 @@ new Vue({
 	router,
 	store,
 	vuetify,
+	toasted,
 	render: h => h(App),
 }).$mount('#app')
